@@ -1,0 +1,270 @@
+.lan [hidden],
+#lan-shell[hidden],
+#lan-hud[hidden] {
+  display: none !important;
+}
+.lan {
+  color: var(--bone);
+  font: 15px/1.6 var(--f-label);
+}
+#lan-shell {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  overflow: auto;
+  pointer-events: auto;
+  background: rgba(11, 13, 15, 0.95);
+  padding: max(24px, env(safe-area-inset-top)) max(20px, 5vw);
+}
+.lan-wrap {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.lan header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.lan h1 {
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+.lan h2 {
+  font-size: 23px;
+  margin: 0 0 16px;
+}
+.lan p {
+  margin: 8px 0;
+  color: var(--bone-dim);
+  max-width: 70ch;
+}
+.lan a {
+  color: var(--signal);
+  text-underline-offset: 4px;
+}
+.lan label {
+  display: block;
+  margin: 16px 0 6px;
+}
+.lan input:not([type="checkbox"]),
+.lan select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--ink-2);
+  color: var(--bone);
+  font: inherit;
+  caret-color: var(--signal);
+}
+.lan input::placeholder {
+  color: var(--bone-dim);
+}
+.lan input::selection {
+  background: var(--signal);
+  color: var(--ink);
+}
+.lan input[type="checkbox"] {
+  accent-color: var(--signal);
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.lan :focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 4px;
+}
+.lan .btn {
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+.lan button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.lan .btn.primary {
+  font-size: 16px;
+  padding: 10px 24px;
+  min-height: 46px;
+  letter-spacing: 0.05em;
+}
+.lan-columns {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+  gap: 48px;
+  margin-top: 28px;
+}
+.lan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.lan-inline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.lan-inline input {
+  min-width: 0;
+  flex: 1;
+}
+.lan-room {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.lan-room small {
+  display: block;
+  color: var(--bone-dim);
+}
+.lan-status {
+  color: var(--signal) !important;
+}
+#lan-error {
+  color: #ffb4a8;
+  white-space: pre-line;
+}
+.lan table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.lan th {
+  color: var(--bone-dim);
+  font-size: 12px;
+  font-weight: 500;
+}
+.lan th,
+.lan td {
+  text-align: right;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--line);
+}
+.lan th:first-child,
+.lan td:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+.lan tr[data-self="true"] {
+  color: var(--signal);
+}
+.lan .lan-rules {
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+  padding-top: 16px;
+  font-size: 13px;
+}
+.lan .lan-address {
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+#lan-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: var(--shadow);
+}
+.lan-score {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  padding: 8px 12px;
+  background: var(--plate-solid);
+}
+.lan-score strong {
+  color: var(--signal);
+  font-size: 24px;
+}
+#lan-menu-button {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  pointer-events: auto;
+}
+#lan-life {
+  position: absolute;
+  top: 24%;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  color: var(--signal);
+}
+#lan-feed {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  text-align: right;
+  max-width: 70vw;
+}
+#lan-help {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(60vw, 580px);
+  text-align: center;
+  color: var(--bone-dim);
+  font-size: 12px;
+}
+body.lan-mode .h-obj,
+body.lan-mode .h-relays,
+body.lan-mode .h-marks,
+body.lan-mode .h-cmarks {
+  display: none;
+}
+body.lan-mode .h-health {
+  opacity: 1;
+}
+body.lan-mode .h-ammo-r {
+  font-size: 0;
+}
+body.lan-mode .h-ammo-r::before {
+  content: "无限备弹";
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  #lan-shell {
+    padding: 20px 18px;
+  }
+  .lan header {
+    align-items: flex-start;
+  }
+  .lan-columns {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .lan th,
+  .lan td {
+    padding: 8px 4px;
+  }
+  .lan-score {
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+  }
+  .lan-score strong {
+    font-size: 18px;
+  }
+  #lan-menu-button {
+    top: 8px;
+    right: 8px;
+  }
+  #lan-help {
+    bottom: 100px;
+    width: 55vw;
+  }
+  body.lan-mode .h-compass {
+    display: none;
+  }
+}
