@@ -78,7 +78,7 @@ JIMAO/
 
 将 `index.html` 放入任意静态网站托管服务的站点根目录即可，无需后端服务或构建命令。
 
-如需使用 GitHub Pages，可在仓库的 **Settings → Pages** 中选择 **Deploy from a branch**，然后选择 `main` 分支的根目录 `/ (root)` 并保存。推送文件本身不会自动启用 Pages，访问地址以设置页面显示的结果为准。
+如需使用 GitHub Pages，可在仓库的 **Settings → Pages** 中选择 **Deploy from a branch**，然后选择 `master` 分支的根目录 `/ (root)` 并保存。推送文件本身不会自动启用 Pages，访问地址以设置页面显示的结果为准。
 
 ## 项目状态
 
